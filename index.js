@@ -20,11 +20,13 @@ module.exports.find = function (keywords, category, callback) {
       .then(function(json) {
         if (category === 'all') {
           for (cat in json.products_and_categories) {
-            json.products_and_categories[cat].forEach(function(product) {
-              if (product.name.replace(/[^a-zA-Z0-9]/g,'_').replace(/__/g, ' ').replace(/_/g, ' ').toLowerCase().indexOf(keywords.toLowerCase()) !== -1) {
-                callback(product.name, null)
-              }
-            });
+            if (cat === 'new') {
+              json.products_and_categories[cat].forEach(function(product) {
+                if (product.name.replace(/[^a-zA-Z0-9]/g,'_').replace(/__/g, ' ').replace(/_/g, ' ').toLowerCase().indexOf(keywords.toLowerCase()) !== -1) {
+                  callback(product.name, null)
+                }
+              });
+            }
           }
         } else {
           json.products_and_categories[category.toLowerCase().charAt(0).toUpperCase() + category.toLowerCase().substr(1)].forEach(function(product) {
