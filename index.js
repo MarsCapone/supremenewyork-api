@@ -21,6 +21,8 @@ module.exports.find = function (keywords, category, callback) {
         if (category === 'all') {
           for (cat in json.products_and_categories) {
             if (cat === 'new') {
+
+            } else {
               json.products_and_categories[cat].forEach(function(product) {
                 if (product.name.replace(/[^a-zA-Z0-9]/g,'_').replace(/__/g, ' ').replace(/_/g, ' ').toLowerCase().indexOf(keywords.toLowerCase()) !== -1) {
                   callback(product.name, null)
