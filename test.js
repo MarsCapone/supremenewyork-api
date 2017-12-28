@@ -1,6 +1,6 @@
 const api = require('./index.js');
 
-api.find('hanes', 'all', (item, error) => {
+api.find('sled', 'all', (item, error) => {
   if (error) {
     console.log(error);
   } else {

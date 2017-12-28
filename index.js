@@ -25,7 +25,15 @@ module.exports.find = function (keywords, category, callback) {
             } else {
               json.products_and_categories[cat].forEach(function(product) {
                 if (product.name.replace(/[^a-zA-Z0-9]/g,'_').replace(/__/g, ' ').replace(/_/g, ' ').toLowerCase().indexOf(keywords.toLowerCase()) !== -1) {
-                  callback(product.name, null)
+                  var productinfo = {
+                    'title': product.name,
+                    'price': (product.price / 100).toFixed(2).toString(),
+                    'id': product.id.toString(),
+                    'imageurl': 'http://images.supremenewyork.com' + product.image_url.substring(2).replace('/ca', '/ma').split('.net')[1],
+                    'new': product.new_item.toString(),
+                    'category': product.category_name
+                  };
+                  callback(JSON.stringify(productinfo), null)
                 }
               });
             }
@@ -33,7 +41,15 @@ module.exports.find = function (keywords, category, callback) {
         } else {
           json.products_and_categories[category.toLowerCase().charAt(0).toUpperCase() + category.toLowerCase().substr(1)].forEach(function(product) {
             if (product.name.replace(/[^a-zA-Z0-9]/g,'_').replace(/__/g, ' ').replace(/_/g, ' ').toLowerCase().indexOf(keywords.toLowerCase()) !== -1) {
-              callback(product.name, null)
+              var productinfo = {
+                'title': product.name,
+                'price': (product.price / 100).toFixed(2).toString(),
+                'id': product.id.toString(),
+                'imageurl': 'http://images.supremenewyork.com' + product.image_url.substring(2).replace('/ca', '/ma').split('.net')[1],
+                'new': product.new_item.toString(),
+                'category': product.category_name
+              };
+              callback(JSON.stringify(productinfo), null)
             }
           });
         }
