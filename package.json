@@ -1,6 +1,6 @@
 {
   "name": "supremenewyork-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An api for Supreme that has many functions.",
   "main": "index.js",
   "scripts": {
