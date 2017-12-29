@@ -9,3 +9,7 @@ exports.droplist = function (callback) {
 exports.styles = function (id, callback) {
   require('./functions/styles')(id, callback)
 };
+
+exports.monitor = function (int, func, callback) {
+  require('./functions/monitor')(int, func, callback)
+}
