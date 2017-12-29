@@ -52,3 +52,8 @@ api.find('sled', 'all', (item, error) => {
   }
 });
 ```
+
+## TODO
+
+1. Style Fetcher
+2. Restock Detecter
