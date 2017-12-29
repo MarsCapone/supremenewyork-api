@@ -1,5 +1,5 @@
 # supremenewyork-api
-[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&type=6&v=1.1.1&x2=0)](https://badge.fury.io/js/supremenewyork-api)
+[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&type=6&v=1.2.0&x2=0)](https://badge.fury.io/js/supremenewyork-api)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 An api for SupremeNewYork based in NodeJS.
