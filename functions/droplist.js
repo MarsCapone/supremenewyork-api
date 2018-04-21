@@ -2,7 +2,7 @@ const cheerio = require('cheerio');
 const moment = require('moment');
 module.exports = function (callback) {
   try {
-    season = 'spring-summer18'
+    season = 'spring-summer2018'
     var d = new Date();
     d.setDate(d.getDate() + (4 + 7 - d.getDay()) % 7);
     var formatted = moment(d).format('YYYY-MM-DD');
